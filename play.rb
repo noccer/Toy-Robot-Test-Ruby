@@ -15,3 +15,19 @@ def print_menu
 	print "Selection: "
 	gets.chomp.to_s.upcase
 end
+
+while true
+	selection = print_menu
+	case selection
+	when "PLACE"
+    if @robot
+      create_robot
+    end
+		@robot.place
+	when "MOVE"
+    create_robot
+		@robot.move
+	else
+		exit
+	end
+end
