@@ -1,8 +1,6 @@
 require './robot.rb'
 require './table.rb'
 
-# def create_robot(x,y,f)
-#   robot = Robot.new(x,y,f)
 def create_robot(x)
   robot = Robot.new(x)
   "ran create_robot, robot created"
@@ -10,11 +8,18 @@ def create_robot(x)
   @robot = robot
 end
 
+def destroy_robot
+  @robot = nil
+  puts "Robot destroyed... aww..."
+  puts @robot.inspect
+end
+
 def print_menu
 	puts "*****************"
 	puts "NIALL'S TOY ROBOT"
-	puts "Choose an option"
+	puts "Choose an option:"
   puts "MAKE"
+  puts "DESTROY"
 	puts "PLACE"
 	puts "MOVE"
   puts "REPORT"
@@ -26,17 +31,14 @@ while true
 	selection = print_menu
 	case selection
 	when "PLACE"
-    puts "please enter robot x-cordinates (number)"
-    robot_x = gets.chomp
     if @robot
+      puts "please enter robot x-cordinates (number)"
+      robot_x = gets.chomp
       puts "Robot exists, placing robot"
       @robot.place(robot_x)
-      puts "Robot created at #{robot_x}"
+      puts "Robot placed at #{robot_x}"
     else
-      puts "Robot exists, creating robot"
-      create_robot(robot_x)
-      @robot.place(robot_x)
-      puts "Robot created at #{robot_x}"
+      puts "Robot doesn't exist, please create a robot first!"
     end
 	when "MOVE"
     create_robot
@@ -46,6 +48,22 @@ while true
       puts @robot.inspect
     else
       puts "There is no Robot yet, why not make one!?"
+    end
+  when "MAKE"
+    if @robot.nil?
+      create_robot(nil)
+      puts "Robot successfully made"
+      puts "Here is your new Robot:"
+      puts @robot.inspect
+    else
+      puts "you already have a robot! here it is:"
+      puts @robot.inspect
+    end
+  when "DESTROY"
+    if @robot
+      destroy_robot
+    else
+      puts "You don't have a robot to destroy!"
     end
 	else
     puts "exiting"
