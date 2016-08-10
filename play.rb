@@ -31,3 +31,5 @@ while true
 		exit
 	end
 end
+
+puts robot.inspect
