@@ -23,6 +23,12 @@ def print_menu
 	puts "PLACE"
 	puts "MOVE"
   puts "REPORT"
+  puts "***************************************************"
+  puts "TABLE INFORMATION"
+  puts "Choose an option:"
+  puts "TABLE"
+  puts "GRID"
+  puts "***************************************************"
 	print "Selection: "
 	gets.chomp.to_s.upcase
 end
@@ -30,6 +36,25 @@ end
 while true
 	selection = print_menu
 	case selection
+  when "MAKE"
+    if @robot.nil?
+      create_robot(nil)
+      puts "***************************************************"
+      puts "Robot successfully made"
+      puts "Here is your new Robot:"
+      puts @robot.inspect
+    else
+      puts "***************************************************"
+      puts "you already have a robot! here it is:"
+      puts @robot.inspect
+    end
+  when "DESTROY"
+    if @robot
+      destroy_robot
+    else
+      puts "***************************************************"
+      puts "You don't have a robot to destroy!"
+    end
 	when "PLACE"
     if @robot
       puts "***************************************************"
@@ -51,25 +76,6 @@ while true
     else
       puts "***************************************************"
       puts "There is no Robot yet, why not make one!?"
-    end
-  when "MAKE"
-    if @robot.nil?
-      create_robot(nil)
-      puts "***************************************************"
-      puts "Robot successfully made"
-      puts "Here is your new Robot:"
-      puts @robot.inspect
-    else
-      puts "***************************************************"
-      puts "you already have a robot! here it is:"
-      puts @robot.inspect
-    end
-  when "DESTROY"
-    if @robot
-      destroy_robot
-    else
-      puts "***************************************************"
-      puts "You don't have a robot to destroy!"
     end
 	else
     puts "exiting"
