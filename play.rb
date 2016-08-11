@@ -93,6 +93,20 @@ while true
       puts "***************************************************"
       puts "There is no Table yet!"
     end
+  when "GRID"
+    if @table
+      grid_modifier = true
+      puts "***************************************************"
+      puts "Your Table is " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
+      puts "Please enter your new desired table width:"
+      @table.w = gets.chomp.to_i
+      puts "Now please enter your new desired table height:"
+      @table.h = gets.chomp.to_i
+      puts "Your Table is now " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
+    else
+      puts "***************************************************"
+      puts "There is no Table, you need to make one!"
+    end
 	else
     puts "exiting"
 		exit
