@@ -20,6 +20,16 @@ def destroy_robot
   puts "Robot destroyed... aww..."
 end
 
+def set_grid_value(grid_modifier_x, x)
+  if x == 'w'
+    @table.w = @new_table_width
+    @grid_modifier_w = false
+  elsif x == 'h'
+    @table.h = @new_table_height
+    @grid_modifier_h = false
+  end
+end
+
 def print_menu
 	puts "***************************************************"
 	puts "NIALL'S TOY ROBOT"
@@ -97,42 +107,41 @@ while true
     if @table
       puts "***************************************************"
       puts "Your Table is " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
-      grid_modifying_w = true
-      while grid_modifying_w == true
+      @grid_modifier_w = true
+      while @grid_modifier_w == true
         puts "Please enter your new desired table width:"
-        new_table_width = gets.chomp.to_i
-        if new_table_width > 0
-          grid_modifying_w = false
-          @table.w = new_table_width
+        @new_table_width = gets.chomp.to_s.to_i
+        if @new_table_width > 0
+          set_grid_value(@grid_modifier_w, 'w')
         else
-          while new_table_width < 1
+          while @new_table_width < 1
             puts "Please enter a number greater than 0:"
-            new_table_width = gets.chomp.to_i
-            if new_table_width > 0
-              grid_modifying_w = false
-              @table.w = new_table_width
+            @new_table_width = gets.chomp.to_s.to_i
+            if @new_table_width > 0
+              set_grid_value(@grid_modifier_w, 'w')
             end
           end
         end
       end
-      grid_modifying_h = true
-      while grid_modifying_h == true
-        puts "Please enter your new desired table width:"
-        new_table_height = gets.chomp.to_i
-        if new_table_height > 0
-          grid_modifying_h = false
-          @table.h = new_table_height
+      @grid_modifier_h = true
+      while @grid_modifier_h == true
+        puts "Please enter your new desired table height:"
+        @new_table_height = gets.chomp.to_s.to_i
+        if @new_table_height > 0
+          set_grid_value(@grid_modifier_h, 'h')
         else
-          while new_table_width < 1
+          while @new_table_height < 1
             puts "Please enter a number greater than 0:"
-            new_table_height = gets.chomp.to_i
-            if new_table_height > 0
-              grid_modifying_h = false
-              @table.h = new_table_height
+            @new_table_height = gets.chomp.to_s.to_i
+            if @new_table_height > 0
+              set_grid_value(@grid_modifier_h, 'h')
             end
           end
         end
       end
+      puts "***************************************************"
+      puts "Your table now looks like this:"
+      puts @table.inspect
     else
       puts "***************************************************"
       puts "There is no Table, you need to make one!"
