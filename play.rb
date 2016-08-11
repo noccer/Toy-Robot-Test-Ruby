@@ -27,7 +27,7 @@ def print_menu
   puts "MAKE"
   puts "DESTROY"
 	puts "PLACE"
-	puts "MOVE"
+	# puts "MOVE"
   puts "REPORT"
   puts "***************************************************"
   puts "TABLE INFORMATION"
@@ -37,10 +37,6 @@ def print_menu
   puts "***************************************************"
 	print "Selection: "
 	gets.chomp.to_s.upcase
-end
-
-def grid_modifying_w_menu
-
 end
 
 while true
