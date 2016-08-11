@@ -39,6 +39,10 @@ def print_menu
 	gets.chomp.to_s.upcase
 end
 
+def grid_modifying_w_menu
+
+end
+
 while true
 	selection = print_menu
 	case selection
@@ -95,14 +99,44 @@ while true
     end
   when "GRID"
     if @table
-      grid_modifier = true
       puts "***************************************************"
       puts "Your Table is " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
-      puts "Please enter your new desired table width:"
-      @table.w = gets.chomp.to_i
-      puts "Now please enter your new desired table height:"
-      @table.h = gets.chomp.to_i
-      puts "Your Table is now " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
+      grid_modifying_w = true
+      while grid_modifying_w == true
+        puts "Please enter your new desired table width:"
+        new_table_width = gets.chomp.to_i
+        if new_table_width > 0
+          grid_modifying_w = false
+          @table.w = new_table_width
+        else
+          while new_table_width < 1
+            puts "Please enter a number greater than 0:"
+            new_table_width = gets.chomp.to_i
+            if new_table_width > 0
+              grid_modifying_w = false
+              @table.w = new_table_width
+            end
+          end
+        end
+      end
+      grid_modifying_h = true
+      while grid_modifying_h == true
+        puts "Please enter your new desired table width:"
+        new_table_height = gets.chomp.to_i
+        if new_table_height > 0
+          grid_modifying_h = false
+          @table.h = new_table_height
+        else
+          while new_table_width < 1
+            puts "Please enter a number greater than 0:"
+            new_table_height = gets.chomp.to_i
+            if new_table_height > 0
+              grid_modifying_h = false
+              @table.h = new_table_height
+            end
+          end
+        end
+      end
     else
       puts "***************************************************"
       puts "There is no Table, you need to make one!"
