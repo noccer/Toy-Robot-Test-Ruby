@@ -10,12 +10,12 @@ end
 
 def destroy_robot
   @robot = nil
+  puts "***************************************************"
   puts "Robot destroyed... aww..."
-  puts @robot.inspect
 end
 
 def print_menu
-	puts "*****************"
+	puts "***************************************************"
 	puts "NIALL'S TOY ROBOT"
 	puts "Choose an option:"
   puts "MAKE"
@@ -32,12 +32,14 @@ while true
 	case selection
 	when "PLACE"
     if @robot
+      puts "***************************************************"
       puts "please enter robot x-cordinates (number)"
       robot_x = gets.chomp
       puts "Robot exists, placing robot"
       @robot.place(robot_x)
       puts "Robot placed at #{robot_x}"
     else
+      puts "***************************************************"
       puts "Robot doesn't exist, please create a robot first!"
     end
 	when "MOVE"
@@ -47,15 +49,18 @@ while true
     if @robot
       puts @robot.inspect
     else
+      puts "***************************************************"
       puts "There is no Robot yet, why not make one!?"
     end
   when "MAKE"
     if @robot.nil?
       create_robot(nil)
+      puts "***************************************************"
       puts "Robot successfully made"
       puts "Here is your new Robot:"
       puts @robot.inspect
     else
+      puts "***************************************************"
       puts "you already have a robot! here it is:"
       puts @robot.inspect
     end
@@ -63,6 +68,7 @@ while true
     if @robot
       destroy_robot
     else
+      puts "***************************************************"
       puts "You don't have a robot to destroy!"
     end
 	else
