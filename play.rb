@@ -1,9 +1,15 @@
 require './robot.rb'
 require './table.rb'
 
+def create_table
+  table = Table.new(5,5)
+  @table = table
+end
+create_table
+
 def create_robot(x)
   robot = Robot.new(x)
-  "ran create_robot, robot created"
+  puts "ran create_robot, robot created"
   puts robot.inspect
   @robot = robot
 end
@@ -68,14 +74,24 @@ while true
       puts "Robot doesn't exist, please create a robot first!"
     end
 	when "MOVE"
-    create_robot
 		@robot.move
   when "REPORT"
     if @robot
+      puts "***************************************************"
+      puts "Your Robot details are as follows:"
       puts @robot.inspect
     else
       puts "***************************************************"
       puts "There is no Robot yet, why not make one!?"
+    end
+  when "TABLE"
+    if @table
+      puts "***************************************************"
+      puts "Your Table details are as follows:"
+      puts @table.inspect
+    else
+      puts "***************************************************"
+      puts "There is no Table yet!"
     end
 	else
     puts "exiting"
