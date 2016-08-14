@@ -1,12 +1,12 @@
 class Table
-  attr_accessor :initialize, :w, :h
+  attr_accessor :initialize, :width, :height
 
-  def initialize(w,h)
-    @w = w
-    @h = h
+  def initialize(width,height)
+    @width = width
+    @height = height
   end
 
-  def table_resize(w,h)
+  def table_resize(width,height)
 
   end
 end
