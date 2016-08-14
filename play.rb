@@ -37,7 +37,6 @@ class Play
     end
   end
 
-# (@table, @grid_edit_mode_width, 'width')
   def set_grid_logic(table, grid_edit_mode, width_or_height_string)
     while grid_edit_mode == true
       puts "Please enter your new desired table #{width_or_height_string}:"
@@ -79,81 +78,80 @@ class Play
 end
 
 play = Play.new
-# @table = Table.new
 
-  while true
-    unless @table
-      @table = Table.new(5,5)
-    end
-    selection = play.print_menu
-  	case selection
-    when "MAKE"
-      if @robot.nil?
-        play.create_robot(nil)
-      else
-        puts "***************************************************"
-        puts "you already have a robot! here it is:"
-        puts @robot.inspect
-      end
-    when "DESTROY"
-      if @robot
-        play.destroy_robot
-      else
-        puts "***************************************************"
-        puts "You don't have a robot to destroy!"
-      end
-    when "PLACE"
-      if @robot
-        puts "***************************************************"
-        puts "please enter robot x-cordinates (number)"
-        robot_x = gets.chomp
-        puts "Robot exists, placing robot"
-        @robot.place(robot_x)
-        puts "Robot placed at #{robot_x}"
-      else
-        puts "***************************************************"
-        puts "Robot doesn't exist, please create a robot first!"
-      end
-    when "MOVE"
-      @robot.move
-    when "REPORT"
-      if @robot
-        puts "***************************************************"
-        puts "Your Robot details are as follows:"
-        puts @robot.inspect
-      else
-        puts "***************************************************"
-        puts "There is no Robot yet, why not make one!?"
-      end
-    when "TABLE"
-      if @table
-        puts "***************************************************"
-        puts "Your Table details are as follows:"
-        puts @table.inspect
-      else
-        puts "***************************************************"
-        puts "There is no Table yet!"
-      end
-    when "GRID"
-      if @table
-        puts "***************************************************"
-        puts "Your Table is " + @table.width.to_s + " units wide, " + @table.height.to_s + " units high."
-
-        @grid_edit_mode_width  = true
-        play.set_grid_logic(@table, @grid_edit_mode_width, 'width')
-
-        @grid_edit_mode_height  = true
-        play.set_grid_logic(@table, @grid_edit_mode_height, 'height')
-
-        puts "***************************************************"
-        puts "Your table now looks like this:"
-        puts @table.inspect
-      else
-        puts "***************************************************"
-        puts "There is no Table, you need to make one!"
-      end
-  	else
-      puts "exiting"
-  		exit
-  	end
+while true
+  unless @table
+    @table = Table.new(5,5)
   end
+  selection = play.print_menu
+	case selection
+  when "MAKE"
+    if @robot.nil?
+      play.create_robot(nil)
+    else
+      puts "***************************************************"
+      puts "you already have a robot! here it is:"
+      puts @robot.inspect
+    end
+  when "DESTROY"
+    if @robot
+      play.destroy_robot
+    else
+      puts "***************************************************"
+      puts "You don't have a robot to destroy!"
+    end
+  when "PLACE"
+    if @robot
+      puts "***************************************************"
+      puts "please enter robot x-cordinates (number)"
+      robot_x = gets.chomp
+      puts "Robot exists, placing robot"
+      @robot.place(robot_x)
+      puts "Robot placed at #{robot_x}"
+    else
+      puts "***************************************************"
+      puts "Robot doesn't exist, please create a robot first!"
+    end
+  when "MOVE"
+    @robot.move
+  when "REPORT"
+    if @robot
+      puts "***************************************************"
+      puts "Your Robot details are as follows:"
+      puts @robot.inspect
+    else
+      puts "***************************************************"
+      puts "There is no Robot yet, why not make one!?"
+    end
+  when "TABLE"
+    if @table
+      puts "***************************************************"
+      puts "Your Table details are as follows:"
+      puts @table.inspect
+    else
+      puts "***************************************************"
+      puts "There is no Table yet!"
+    end
+  when "GRID"
+    if @table
+      puts "***************************************************"
+      puts "Your Table is " + @table.width.to_s + " units wide, " + @table.height.to_s + " units high."
+
+      @grid_edit_mode_width  = true
+      play.set_grid_logic(@table, @grid_edit_mode_width, 'width')
+
+      @grid_edit_mode_height  = true
+      play.set_grid_logic(@table, @grid_edit_mode_height, 'height')
+
+      puts "***************************************************"
+      puts "Your table now looks like this:"
+      puts @table.inspect
+    else
+      puts "***************************************************"
+      puts "There is no Table, you need to make one!"
+    end
+	else
+    puts "exiting"
+		exit
+	end
+end
