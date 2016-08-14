@@ -1,6 +1,8 @@
 require './robot.rb'
 require './table.rb'
 
+class Play
+
 def create_table
   table = Table.new(5,5)
   @table = table
@@ -163,3 +165,5 @@ while true
 end
 
 puts robot.inspect
+
+end
