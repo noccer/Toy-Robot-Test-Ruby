@@ -2,18 +2,23 @@ require './robot.rb'
 require './table.rb'
 
 class Play
+  def initialize(table, robot)
+    @table = table
+    @robot = robot
+  end
 
   def create_table
     table = Table.new(5,5)
     @table = table
   end
-  create_table
 
   def create_robot(x)
     robot = Robot.new(x)
-    puts "ran create_robot, robot created"
-    puts robot.inspect
     @robot = robot
+    puts "***************************************************"
+    puts "ran create_robot, robot successfully created"
+    puts "Here is your robot:"
+    puts @robot.inspect
   end
 
   def destroy_robot
@@ -85,17 +90,17 @@ class Play
   	print "Selection: "
   	gets.chomp.to_s.upcase
   end
+end
+
+play = Play.new(@table, @robot)
+@table = Table.new(5,5)
 
   while true
-  	selection = print_menu
+    selection = play.print_menu
   	case selection
     when "MAKE"
       if @robot.nil?
-        create_robot(nil)
-        puts "***************************************************"
-        puts "Robot successfully made"
-        puts "Here is your new Robot:"
-        puts @robot.inspect
+        play.create_robot(nil)
       else
         puts "***************************************************"
         puts "you already have a robot! here it is:"
@@ -103,12 +108,12 @@ class Play
       end
     when "DESTROY"
       if @robot
-        destroy_robot
+        play.destroy_robot
       else
         puts "***************************************************"
         puts "You don't have a robot to destroy!"
       end
-  	when "PLACE"
+    when "PLACE"
       if @robot
         puts "***************************************************"
         puts "please enter robot x-cordinates (number)"
@@ -120,8 +125,8 @@ class Play
         puts "***************************************************"
         puts "Robot doesn't exist, please create a robot first!"
       end
-  	when "MOVE"
-  		@robot.move
+    when "MOVE"
+      @robot.move
     when "REPORT"
       if @robot
         puts "***************************************************"
@@ -146,10 +151,10 @@ class Play
         puts "Your Table is " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
 
         @grid_modifier_w = true
-        set_grid_logic(@grid_modifier_w, 'width', @new_table_width, 'w')
+        play.set_grid_logic(@grid_modifier_w, 'width', @new_table_width, 'w')
 
         @grid_modifier_h = true
-        set_grid_logic(@grid_modifier_h, 'height', @new_table_height, 'h')
+        play.set_grid_logic(@grid_modifier_h, 'height', @new_table_height, 'h')
 
         puts "***************************************************"
         puts "Your table now looks like this:"
@@ -163,7 +168,3 @@ class Play
   		exit
   	end
   end
-
-  puts robot.inspect
-
-end
