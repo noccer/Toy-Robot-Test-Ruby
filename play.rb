@@ -2,9 +2,7 @@ require './robot.rb'
 require './table.rb'
 
 class Play
-  def initialize(table, robot)
-    @table = table
-    @robot = robot
+  def initialize
   end
 
   def create_table
@@ -27,45 +25,33 @@ class Play
     puts "Robot destroyed... aww..."
   end
 
-  @grid_modifier_w = true
-  @grid_modifier_h = true
+  @grid_edit_mode_width  = true
+  @grid_edit_mode_height = true
 
-  def set_grid_value(x)
-    if x == 'w'
-      @table.w = @new_table_width
-      @grid_modifier_w = false
-      puts "@grid_modifier_w is now:"
-      puts @grid_modifier_w
-    elsif x == 'h'
-      @table.h = @new_table_height
-      @grid_modifier_h = false
-      puts "@grid_modifier_h is now:"
-      puts @grid_modifier_h
+  # def update_grid_value(x, new_table_width_or_height_value, table)
+  def update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
+    if width_or_height_string == 'width'
+      table.width = new_table_width_or_height_value
+    elsif width_or_height_string == 'height'
+      table.height = new_table_width_or_height_value
     end
-    puts "outisde set_grid_value if statement:"
-    puts @grid_modifier_w
   end
 
-  def set_grid_logic(grid_modifier, width_or_height_string, new_table_width_or_height_value, method)
-    # puts "outside while loop: grid_modifier is:"
-    # puts grid_modifier
-    while grid_modifier == true
-      # puts "start of while loop: grid_modifier is:"
-      # puts grid_modifier
+# (@table, @grid_edit_mode_width, 'width')
+  def set_grid_logic(table, grid_edit_mode, width_or_height_string)
+    while grid_edit_mode == true
       puts "Please enter your new desired table #{width_or_height_string}:"
       new_table_width_or_height_value = gets.chomp.to_s.to_i
       if new_table_width_or_height_value > 0
-        set_grid_value(method)
-        # puts "grid_modifier in first if statement is:"
-        # puts grid_modifier
+        update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
+        grid_edit_mode = false
       else
         while new_table_width_or_height_value < 1
-          puts "Please enter a number greater than 0:"
+          puts "Please enter a #{width_or_height_string} value greater than 0:"
           new_table_width_or_height_value = gets.chomp.to_s.to_i
           if new_table_width_or_height_value > 0
-            set_grid_value(method)
-            # puts "grid_modifier in else-while-if statement is:"
-            # puts grid_modifier
+            update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
+            grid_edit_mode = false
           end
         end
       end
@@ -92,10 +78,13 @@ class Play
   end
 end
 
-play = Play.new(@table, @robot)
-@table = Table.new(5,5)
+play = Play.new
+# @table = Table.new
 
   while true
+    unless @table
+      @table = Table.new(5,5)
+    end
     selection = play.print_menu
   	case selection
     when "MAKE"
@@ -148,13 +137,13 @@ play = Play.new(@table, @robot)
     when "GRID"
       if @table
         puts "***************************************************"
-        puts "Your Table is " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
+        puts "Your Table is " + @table.width.to_s + " units wide, " + @table.height.to_s + " units high."
 
-        @grid_modifier_w = true
-        play.set_grid_logic(@grid_modifier_w, 'width', @new_table_width, 'w')
+        @grid_edit_mode_width  = true
+        play.set_grid_logic(@table, @grid_edit_mode_width, 'width')
 
-        @grid_modifier_h = true
-        play.set_grid_logic(@grid_modifier_h, 'height', @new_table_height, 'h')
+        @grid_edit_mode_height  = true
+        play.set_grid_logic(@table, @grid_edit_mode_height, 'height')
 
         puts "***************************************************"
         puts "Your table now looks like this:"
