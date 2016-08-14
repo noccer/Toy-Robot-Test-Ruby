@@ -20,13 +20,48 @@ def destroy_robot
   puts "Robot destroyed... aww..."
 end
 
-def set_grid_value(grid_modifier_x, x)
+@grid_modifier_w = true
+@grid_modifier_h = true
+
+def set_grid_value(x)
   if x == 'w'
     @table.w = @new_table_width
     @grid_modifier_w = false
+    puts "@grid_modifier_w is now:"
+    puts @grid_modifier_w
   elsif x == 'h'
     @table.h = @new_table_height
     @grid_modifier_h = false
+    puts "@grid_modifier_h is now:"
+    puts @grid_modifier_h
+  end
+  puts "outisde set_grid_value if statement:"
+  puts @grid_modifier_w
+end
+
+def set_grid_logic(grid_modifier, width_or_height_string, new_table_width_or_height_value, method)
+  # puts "outside while loop: grid_modifier is:"
+  # puts grid_modifier
+  while grid_modifier == true
+    # puts "start of while loop: grid_modifier is:"
+    # puts grid_modifier
+    puts "Please enter your new desired table #{width_or_height_string}:"
+    new_table_width_or_height_value = gets.chomp.to_s.to_i
+    if new_table_width_or_height_value > 0
+      set_grid_value(method)
+      # puts "grid_modifier in first if statement is:"
+      # puts grid_modifier
+    else
+      while new_table_width_or_height_value < 1
+        puts "Please enter a number greater than 0:"
+        new_table_width_or_height_value = gets.chomp.to_s.to_i
+        if new_table_width_or_height_value > 0
+          set_grid_value(method)
+          # puts "grid_modifier in else-while-if statement is:"
+          # puts grid_modifier
+        end
+      end
+    end
   end
 end
 
@@ -107,38 +142,13 @@ while true
     if @table
       puts "***************************************************"
       puts "Your Table is " + @table.w.to_s + " units wide, " + @table.h.to_s + " units high."
+
       @grid_modifier_w = true
-      while @grid_modifier_w == true
-        puts "Please enter your new desired table width:"
-        @new_table_width = gets.chomp.to_s.to_i
-        if @new_table_width > 0
-          set_grid_value(@grid_modifier_w, 'w')
-        else
-          while @new_table_width < 1
-            puts "Please enter a number greater than 0:"
-            @new_table_width = gets.chomp.to_s.to_i
-            if @new_table_width > 0
-              set_grid_value(@grid_modifier_w, 'w')
-            end
-          end
-        end
-      end
+      set_grid_logic(@grid_modifier_w, 'width', @new_table_width, 'w')
+
       @grid_modifier_h = true
-      while @grid_modifier_h == true
-        puts "Please enter your new desired table height:"
-        @new_table_height = gets.chomp.to_s.to_i
-        if @new_table_height > 0
-          set_grid_value(@grid_modifier_h, 'h')
-        else
-          while @new_table_height < 1
-            puts "Please enter a number greater than 0:"
-            @new_table_height = gets.chomp.to_s.to_i
-            if @new_table_height > 0
-              set_grid_value(@grid_modifier_h, 'h')
-            end
-          end
-        end
-      end
+      set_grid_logic(@grid_modifier_h, 'height', @new_table_height, 'h')
+
       puts "***************************************************"
       puts "Your table now looks like this:"
       puts @table.inspect
