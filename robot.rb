@@ -3,7 +3,7 @@ class Robot
 
   # def initialize(x, y, f)
   def initialize(x)
-    puts "robot initialized"
+    # puts "robot initialized"
     @x = x
     @y = y
     @f = f
