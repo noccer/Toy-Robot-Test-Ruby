@@ -120,7 +120,10 @@ while true
     end
   when "LEFT"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
-      puts "Turning Left"
+      old_direction = @robot.f
+      robot = @robot
+      @robot.turn_left(robot)
+      puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}."
     elsif @robot && (@robot.x == nil)
       puts "***************************************************"
       puts "Your robot isn't on the table yet, please place your Robot on the table first!"
@@ -175,7 +178,7 @@ while true
       puts "There is no Table, you need to make one!"
     end
 	else
-    puts "exiting"
+    puts "Sorry, that command is not recognised. Goodbye!"
 		exit
 	end
 end
