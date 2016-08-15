@@ -132,7 +132,10 @@ while true
     end
   when "RIGHT"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
-      puts "Turning Right"
+      old_direction = @robot.f
+      robot = @robot
+      @robot.turn_(robot)
+      puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}."
     elsif @robot && (@robot.x == nil)
       puts "***************************************************"
       puts "Your robot isn't on the table yet, please place your Robot on the table first!"
