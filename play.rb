@@ -1,28 +1,9 @@
 require './robot.rb'
 require './table.rb'
 
+@robot = nil
 class Play
   def initialize
-  end
-
-  def create_table
-    table = Table.new(5,5)
-    @table = table
-  end
-
-  def create_robot(x)
-    robot = Robot.new(x)
-    @robot = robot
-    puts "***************************************************"
-    puts "ran create_robot, robot successfully created"
-    puts "Here is your robot:"
-    puts @robot.inspect
-  end
-
-  def destroy_robot
-    @robot = nil
-    puts "***************************************************"
-    puts "Robot destroyed... aww..."
   end
 
   @grid_edit_mode_width  = true
@@ -86,8 +67,10 @@ while true
   selection = play.print_menu
 	case selection
   when "MAKE"
-    if @robot.nil?
-      play.create_robot(nil)
+    unless @robot
+      @robot = Robot.new
+      puts "Here is your Robot:"
+      puts @robot.inspect
     else
       puts "***************************************************"
       puts "you already have a robot! here it is:"
@@ -95,7 +78,9 @@ while true
     end
   when "DESTROY"
     if @robot
-      play.destroy_robot
+      @robot = nil
+      puts "***************************************************"
+      puts "Robot destroyed... aww..."
     else
       puts "***************************************************"
       puts "You don't have a robot to destroy!"
@@ -104,10 +89,11 @@ while true
     if @robot
       puts "***************************************************"
       puts "please enter robot x-cordinates (number)"
-      robot_x = gets.chomp
+      robot_x = gets.chomp.to_i
       puts "Robot exists, placing robot"
       @robot.place(robot_x)
       puts "Robot placed at #{robot_x}"
+      puts @robot.inspect
     else
       puts "***************************************************"
       puts "Robot doesn't exist, please create a robot first!"
