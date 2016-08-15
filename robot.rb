@@ -16,7 +16,6 @@ class Robot
   # end
 
   def place(x, y, f)
-    puts "def place has been run, placed at #{x}"
     @x = x
     @y = y
     @f = f
