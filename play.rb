@@ -18,7 +18,6 @@ rescue LoadError
   puts "If you wish to remove this gem afterwards, please run:"
   puts "gem uninstall colorize"
   puts "----------------------------------------------------"
-
   exit
 end
 
@@ -107,7 +106,7 @@ while true
       puts "Your robot has been destroyed... aww...".red
     else
       puts "----------------------------------------------------".yellow
-      puts "You don't have a robot to destroy!"
+      puts "You don't have a robot to destroy!".red
     end
   when "PLACE"
     if @robot
@@ -123,7 +122,7 @@ while true
       # puts @robot.inspect
     else
       puts "----------------------------------------------------".yellow
-      puts "Your robot doesn't exist, please create a robot first!".red
+      puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
   when "PPP"
     @robot = Robot.new
@@ -138,7 +137,7 @@ while true
       puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
     else
       puts "----------------------------------------------------".yellow
-      puts "Your robot doesn't exist, please create a robot first!".red
+      puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
   when "LEFT"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
@@ -150,7 +149,7 @@ while true
       puts "----------------------------------------------------".yellow
       puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
     else
-      puts "There is no Robot yet, why not make one!?".red
+      puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
   when "RIGHT"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
@@ -162,7 +161,7 @@ while true
       puts "----------------------------------------------------".yellow
       puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
     else
-      puts "There is no Robot yet, why not make one!?".red
+      puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
   when "REPORT"
     if @robot
@@ -171,7 +170,7 @@ while true
       puts @robot.inspect.green
     else
       puts "----------------------------------------------------".yellow
-      puts "There is no Robot yet, why not make one!?".red
+      puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
   when "TABLE"
     if @table
