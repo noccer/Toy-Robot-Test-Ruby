@@ -21,5 +21,26 @@ class Robot
     @f = "NORTH"
   end
 
+  @x_modifier = 0
+  @y_modifier = 0
+
+  def check_direction
+    case
+      when (@f == "NORTH")
+        @x_modifier = 0
+        @y_modifier = 1
+      when (@f == "EAST")
+        @x_modifier = 1
+        @y_modifier = 0
+      when (@f == "SOUTH")
+        @x_modifier = 0
+        @y_modifier = -1
+      when (@f == "WEST")
+        @x_modifier = -1
+        @y_modifier = 0
+      else
+        exit
+      end
+    end
 
 end
