@@ -15,4 +15,11 @@ class Robot
     @f = f
   end
 
+  def place3n
+    @x = 3
+    @y = 3
+    @f = "NORTH"
+  end
+
+
 end
