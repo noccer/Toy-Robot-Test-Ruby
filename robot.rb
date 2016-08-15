@@ -53,8 +53,7 @@ class Robot
     else
       puts "STOP! Your robot is at the edge of the table! Turn your robot LEFT or RIGHT to continue playing."
       puts "Your robot is at co-ordinates (#{robot.x},#{robot.y}) and is facing #{robot.f}"
-      puts "The table is a #{table.width + 1} x #{table.height + 1} grid."
-      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{table.width},#{table.height}) [NORTH-SOUTH]"
+      puts "Run the TABLE command for more information about your table."
     end
   end
 
@@ -69,8 +68,8 @@ class Robot
       when (robot.f == "WEST")
         robot.f = "SOUTH"
       else
-        puts "Error, your Robot is #{robot.f}, not NORTH -or- SOUTH -or- EAST -or- WEST"
-        exit
+        puts "Error, your Robot is direction value is '#{robot.f}', not NORTH -or- SOUTH -or- EAST -or- WEST"
+        puts "Please try again - run the PLACE command to correct this."
       end
   end
 end
