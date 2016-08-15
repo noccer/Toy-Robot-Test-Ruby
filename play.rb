@@ -46,6 +46,8 @@ class Play
     puts "DESTROY"
   	puts "PLACE"
   	puts "MOVE"
+    puts "LEFT"
+    puts "RIGHT"
     puts "REPORT"
     puts "***************************************************"
     puts "TABLE INFORMATION"
@@ -73,14 +75,14 @@ while true
       puts @robot.inspect
     else
       puts "***************************************************"
-      puts "you already have a robot! here it is:"
+      puts "You already have a robot! here it is:"
       puts @robot.inspect
     end
   when "DESTROY"
     if @robot
       @robot = nil
       puts "***************************************************"
-      puts "Robot destroyed... aww..."
+      puts "Your robot has been destroyed... aww..."
     else
       puts "***************************************************"
       puts "You don't have a robot to destroy!"
@@ -88,18 +90,18 @@ while true
   when "PLACE"
     if @robot
       puts "***************************************************"
-      puts "please enter robot x-cordinates (number)"
+      puts "Please enter robot x-cordinates (number)"
       robot_x = gets.chomp.to_i
-      puts "please enter robot y-cordinates (number)"
+      puts "Please enter robot y-cordinates (number)"
       robot_y = gets.chomp.to_i
-      puts "please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
+      puts "Please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
       robot_f = gets.chomp.to_s
       @robot.place(robot_x, robot_y, robot_f)
-      puts "Robot placed at #{robot_x}, #{robot_y}, and it is facing #{robot_f}"
+      puts "Your robot is placed at #{robot_x}, #{robot_y}, and it is facing #{robot_f}"
       puts @robot.inspect
     else
       puts "***************************************************"
-      puts "Robot doesn't exist, please create a robot first!"
+      puts "Your robot doesn't exist, please create a robot first!"
     end
   when "PPP"
     @robot = Robot.new
@@ -111,10 +113,28 @@ while true
       @robot.move(robot, @table)
     elsif @robot && (@robot.x == nil)
       puts "***************************************************"
-      puts "Robot isn't on the table yet, please place your Robot on the table first!"
+      puts "Your robot isn't on the table yet, please place your Robot on the table first!"
     else
       puts "***************************************************"
-      puts "Robot doesn't exist, please create a robot first!"
+      puts "Your robot doesn't exist, please create a robot first!"
+    end
+  when "LEFT"
+    if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
+      puts "Turning Left"
+    elsif @robot && (@robot.x == nil)
+      puts "***************************************************"
+      puts "Your robot isn't on the table yet, please place your Robot on the table first!"
+    else
+      puts "There is no Robot yet, why not make one!?"
+    end
+  when "RIGHT"
+    if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
+      puts "Turning Right"
+    elsif @robot && (@robot.x == nil)
+      puts "***************************************************"
+      puts "Your robot isn't on the table yet, please place your Robot on the table first!"
+    else
+      puts "There is no Robot yet, why not make one!?"
     end
   when "REPORT"
     if @robot
