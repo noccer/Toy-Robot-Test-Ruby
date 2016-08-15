@@ -57,6 +57,11 @@ class Robot
     end
   end
 
+  def turn_error_messages(robot)
+    puts "Error, your Robot is direction value is '#{robot.f}', not NORTH -or- SOUTH -or- EAST -or- WEST"
+    puts "Please try again - run the PLACE command to enter a correct direction."
+  end
+
   def turn_left(robot)
     case
       when (robot.f == "NORTH")
@@ -68,8 +73,7 @@ class Robot
       when (robot.f == "WEST")
         robot.f = "SOUTH"
       else
-        puts "Error, your Robot is direction value is '#{robot.f}', not NORTH -or- SOUTH -or- EAST -or- WEST"
-        puts "Please try again - run the PLACE command to correct this."
+        turn_error_messages(robot)
       end
   end
 
@@ -84,8 +88,7 @@ class Robot
       when (robot.f == "WEST")
         robot.f = "NORTH"
       else
-        puts "Error, your Robot is direction value is '#{robot.f}', not NORTH -or- SOUTH -or- EAST -or- WEST"
-        puts "Please try again - run the PLACE command to correct this."
+        turn_error_messages(robot)
       end
   end
 end
