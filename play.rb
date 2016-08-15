@@ -40,8 +40,8 @@ class Play
   end
 
   def print_menu
-  	puts "----------------------------------------------------"
-  	puts "TOY ROBOT - by Niall O'Callaghan | github.com/noccer".yellow.on_blue
+  	puts "----------------------------------------------------".blue
+  	puts "TOY ROBOT - by Niall O'Callaghan | github.com/noccer".yellow
     # puts "----------------------------------------------------"
   	puts "Choose an option:".yellow
     puts "MAKE"
