@@ -57,4 +57,20 @@ class Robot
       puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{table.width},#{table.height}) [NORTH-SOUTH]"
     end
   end
+
+  def turn_left(robot)
+    case
+      when (robot.f == "NORTH")
+        robot.f = "WEST"
+      when (robot.f == "EAST")
+        robot.f = "NORTH"
+      when (robot.f == "SOUTH")
+        robot.f = "EAST"
+      when (robot.f == "WEST")
+        robot.f = "SOUTH"
+      else
+        puts "Error, your Robot is #{robot.f}, not NORTH -or- SOUTH -or- EAST -or- WEST"
+        exit
+      end
+  end
 end
