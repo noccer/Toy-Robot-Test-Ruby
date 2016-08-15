@@ -1,6 +1,26 @@
 require './robot.rb'
 require './table.rb'
-require 'colorize'
+begin
+  require 'colorize'
+rescue LoadError
+  puts "----------------------------------------------------"
+  puts "TOY ROBOT - by Niall O'Callaghan | github.com/noccer"
+  puts ""
+  puts "IMPORTANT!"
+  puts "To use this program, you need to install the Colorize gem."
+  puts ""
+  puts "More information about Colorize gem:"
+  puts "https://github.com/fazibear/colorize"
+  puts ""
+  puts "Please run:"
+  puts "gem install colorize"
+  puts ""
+  puts "If you wish to remove this gem afterwards, please run:"
+  puts "gem uninstall colorize"
+  puts "----------------------------------------------------"
+
+  exit
+end
 
 @robot = nil
 class Play
@@ -40,7 +60,7 @@ class Play
   end
 
   def print_menu
-  	puts "----------------------------------------------------".yellow.blue
+  	puts "----------------------------------------------------".blue
   	puts "TOY ROBOT - by Niall O'Callaghan | github.com/noccer".yellow
     # puts "----------------------------------------------------".yellow
   	puts "Choose an option:".yellow
