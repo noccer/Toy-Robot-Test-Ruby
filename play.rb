@@ -128,8 +128,8 @@ while true
   when "TABLE"
     if @table
       puts "***************************************************"
-      puts "Your Table details are as follows:"
-      puts @table.inspect
+      puts "The table is a #{@table.width + 1} x #{@table.height + 1} grid."
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]"
     else
       puts "***************************************************"
       puts "There is no Table yet!"
@@ -137,7 +137,8 @@ while true
   when "GRID"
     if @table
       puts "***************************************************"
-      puts "Your Table is " + @table.width.to_s + " units wide, " + @table.height.to_s + " units high."
+      puts "The table is currently a #{@table.width + 1} x #{@table.height + 1} grid."
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]"
 
       @grid_edit_mode_width  = true
       play.set_grid_logic(@table, @grid_edit_mode_width, 'width')
@@ -147,7 +148,8 @@ while true
 
       puts "***************************************************"
       puts "Your table now looks like this:"
-      puts @table.inspect
+      puts "#{@table.width + 1} x #{@table.height + 1} grid."
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]"
     else
       puts "***************************************************"
       puts "There is no Table, you need to make one!"

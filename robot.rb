@@ -45,7 +45,7 @@ class Robot
 
   def move(robot, table)
     check_direction
-    if (robot.x < table.width && robot.x > 1 && robot.y < table.height && robot.y > 1)
+    if (robot.x + @x_modifier <= table.width && robot.x + @x_modifier >= 0 && robot.y + @y_modifier <= table.height && robot.y + @y_modifier >= 0)
       robot.x = robot.x + @x_modifier
       robot.y = robot.y + @y_modifier
       puts "Your robot has moved #{robot.f} by 1 place"
@@ -53,7 +53,8 @@ class Robot
     else
       puts "STOP! Your robot is at the edge of the table! Turn your robot LEFT or RIGHT to continue playing."
       puts "Your robot is at co-ordinates (#{robot.x},#{robot.y}) and is facing #{robot.f}"
-      puts "The table is #{table.width} units wide (EAST-WEST), and #{table.height} units high (NORTH-SOUTH)"
+      puts "The table is a #{table.width + 1} x #{table.height + 1} grid."
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{table.width},#{table.height}) [NORTH-SOUTH]"
     end
   end
 end
