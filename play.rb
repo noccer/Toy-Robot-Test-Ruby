@@ -101,6 +101,10 @@ while true
       puts "***************************************************"
       puts "Robot doesn't exist, please create a robot first!"
     end
+  when "PPP"
+    @robot = Robot.new
+    @robot.place3n
+    puts @robot.inspect
   when "MOVE"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       robot = @robot
