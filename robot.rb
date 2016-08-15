@@ -2,7 +2,7 @@ class Robot
   attr_accessor :initialize, :move, :place, :x, :y, :f
 
   # def initialize(x, y, f)
-  def initialize(x)
+  def initialize
     # puts "robot initialized"
     @x = x
     @y = y
@@ -17,6 +17,7 @@ class Robot
 
   def place(x)
     puts "def place has been run, placed at #{x}"
+    @x = x
   end
 
   def move
