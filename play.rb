@@ -134,7 +134,7 @@ while true
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       old_direction = @robot.f
       robot = @robot
-      @robot.turn_(robot)
+      @robot.turn_right(robot)
       puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}."
     elsif @robot && (@robot.x == nil)
       puts "***************************************************"
@@ -181,7 +181,6 @@ while true
       puts "There is no Table, you need to make one!"
     end
 	else
-    puts "Sorry, that command is not recognised. Goodbye!"
-		exit
+    puts "Sorry, that command is not recognised. Please try again."
 	end
 end
