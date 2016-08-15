@@ -62,7 +62,7 @@ play = Play.new
 
 while true
   unless @table
-    @table = Table.new(5,5)
+    @table = Table.new(4,4)
   end
   selection = play.print_menu
 	case selection
