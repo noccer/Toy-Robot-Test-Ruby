@@ -90,9 +90,12 @@ while true
       puts "***************************************************"
       puts "please enter robot x-cordinates (number)"
       robot_x = gets.chomp.to_i
-      puts "Robot exists, placing robot"
-      @robot.place(robot_x)
-      puts "Robot placed at #{robot_x}"
+      puts "please enter robot y-cordinates (number)"
+      robot_y = gets.chomp.to_i
+      puts "please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
+      robot_f = gets.chomp.to_s
+      @robot.place(robot_x, robot_y, robot_f)
+      puts "Robot placed at #{robot_x}, #{robot_y}, and it is facing #{robot_f}"
       puts @robot.inspect
     else
       puts "***************************************************"
