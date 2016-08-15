@@ -15,9 +15,11 @@ class Robot
   # def direction
   # end
 
-  def place(x)
+  def place(x, y, f)
     puts "def place has been run, placed at #{x}"
     @x = x
+    @y = y
+    @f = f
   end
 
   def move
