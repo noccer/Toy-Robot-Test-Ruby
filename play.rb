@@ -74,17 +74,17 @@ while true
     unless @robot
       @robot = Robot.new
       puts "Here is your Robot:"
-      puts @robot.inspect
+      puts @robot.inspect.green
     else
       puts "----------------------------------------------------".yellow
       puts "You already have a robot! here it is:"
-      puts @robot.inspect
+      puts @robot.inspect.green
     end
   when "DESTROY"
     if @robot
       @robot = nil
       puts "----------------------------------------------------".yellow
-      puts "Your robot has been destroyed... aww..."
+      puts "Your robot has been destroyed... aww...".red
     else
       puts "----------------------------------------------------".yellow
       puts "You don't have a robot to destroy!"
@@ -99,74 +99,74 @@ while true
       puts "Please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
       robot_f = gets.chomp.to_s
       @robot.place(robot_x, robot_y, robot_f)
-      puts "Your robot is placed at #{robot_x}, #{robot_y}, and it is facing #{robot_f}"
-      puts @robot.inspect
+      puts "Your robot is placed at #{robot_x}, #{robot_y}, and it is facing #{robot_f}".green
+      # puts @robot.inspect
     else
       puts "----------------------------------------------------".yellow
-      puts "Your robot doesn't exist, please create a robot first!"
+      puts "Your robot doesn't exist, please create a robot first!".red
     end
   when "PPP"
     @robot = Robot.new
     @robot.place3n
-    puts @robot.inspect
+    puts @robot.inspect.green
   when "MOVE"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       robot = @robot
       @robot.move(robot, @table)
     elsif @robot && (@robot.x == nil)
       puts "----------------------------------------------------".yellow
-      puts "Your robot isn't on the table yet, please place your Robot on the table first!"
+      puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
     else
       puts "----------------------------------------------------".yellow
-      puts "Your robot doesn't exist, please create a robot first!"
+      puts "Your robot doesn't exist, please create a robot first!".red
     end
   when "LEFT"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       old_direction = @robot.f
       robot = @robot
       @robot.turn_left(robot)
-      puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}."
+      puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}.".green
     elsif @robot && (@robot.x == nil)
       puts "----------------------------------------------------".yellow
-      puts "Your robot isn't on the table yet, please place your Robot on the table first!"
+      puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
     else
-      puts "There is no Robot yet, why not make one!?"
+      puts "There is no Robot yet, why not make one!?".red
     end
   when "RIGHT"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       old_direction = @robot.f
       robot = @robot
       @robot.turn_right(robot)
-      puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}."
+      puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}.".green
     elsif @robot && (@robot.x == nil)
       puts "----------------------------------------------------".yellow
-      puts "Your robot isn't on the table yet, please place your Robot on the table first!"
+      puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
     else
-      puts "There is no Robot yet, why not make one!?"
+      puts "There is no Robot yet, why not make one!?".red
     end
   when "REPORT"
     if @robot
       puts "----------------------------------------------------".yellow
       puts "Your Robot details are as follows:"
-      puts @robot.inspect
+      puts @robot.inspect.green
     else
       puts "----------------------------------------------------".yellow
-      puts "There is no Robot yet, why not make one!?"
+      puts "There is no Robot yet, why not make one!?".red
     end
   when "TABLE"
     if @table
       puts "----------------------------------------------------".yellow
-      puts "The table is a #{@table.width + 1} x #{@table.height + 1} grid."
-      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]"
+      puts "The table is a #{@table.width + 1} x #{@table.height + 1} grid.".green
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]".green
     else
       puts "----------------------------------------------------".yellow
-      puts "There is no Table yet!"
+      puts "There is no Table yet!".red
     end
   when "GRID"
     if @table
       puts "----------------------------------------------------".yellow
-      puts "The table is currently a #{@table.width + 1} x #{@table.height + 1} grid."
-      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]"
+      puts "The table is currently a #{@table.width + 1} x #{@table.height + 1} grid.".green
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]".green
 
       @grid_edit_mode_width  = true
       play.set_grid_logic(@table, @grid_edit_mode_width, 'width')
@@ -176,15 +176,16 @@ while true
 
       puts "----------------------------------------------------".yellow
       puts "Your table now looks like this:"
-      puts "#{@table.width + 1} x #{@table.height + 1} grid."
-      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]"
+      puts "#{@table.width + 1} x #{@table.height + 1} grid.".green
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]".green
     else
       puts "----------------------------------------------------".yellow
-      puts "There is no Table, you need to make one!"
+      puts "There is no Table, you need to make one!".red
     end
   when "EXIT"
+  	puts "Thanks for playing TOY ROBOT - by Niall O'Callaghan | github.com/noccer".blue
     exit
 	else
-    puts "Sorry, that command is not recognised. Please try again."
+    puts "Sorry, that command is not recognised. Please try again.".red
 	end
 end
