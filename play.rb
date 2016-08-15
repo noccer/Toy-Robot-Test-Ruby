@@ -45,7 +45,7 @@ class Play
     puts "MAKE"
     puts "DESTROY"
   	puts "PLACE"
-  	# puts "MOVE"
+  	puts "MOVE"
     puts "REPORT"
     puts "***************************************************"
     puts "TABLE INFORMATION"
@@ -102,7 +102,16 @@ while true
       puts "Robot doesn't exist, please create a robot first!"
     end
   when "MOVE"
-    @robot.move
+    if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
+      robot = @robot
+      @robot.move(robot, @table)
+    elsif @robot && (@robot.x == nil)
+      puts "***************************************************"
+      puts "Robot isn't on the table yet, please place your Robot on the table first!"
+    else
+      puts "***************************************************"
+      puts "Robot doesn't exist, please create a robot first!"
+    end
   when "REPORT"
     if @robot
       puts "***************************************************"
