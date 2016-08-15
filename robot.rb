@@ -72,4 +72,20 @@ class Robot
         puts "Please try again - run the PLACE command to correct this."
       end
   end
+
+  def turn_right(robot)
+    case
+      when (robot.f == "NORTH")
+        robot.f = "EAST"
+      when (robot.f == "EAST")
+        robot.f = "SOUTH"
+      when (robot.f == "SOUTH")
+        robot.f = "WEST"
+      when (robot.f == "WEST")
+        robot.f = "NORTH"
+      else
+        puts "Error, your Robot is direction value is '#{robot.f}', not NORTH -or- SOUTH -or- EAST -or- WEST"
+        puts "Please try again - run the PLACE command to correct this."
+      end
+  end
 end
