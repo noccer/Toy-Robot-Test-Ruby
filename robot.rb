@@ -48,12 +48,12 @@ class Robot
     if (robot.x + @x_modifier <= table.width && robot.x + @x_modifier >= 0 && robot.y + @y_modifier <= table.height && robot.y + @y_modifier >= 0)
       robot.x = robot.x + @x_modifier
       robot.y = robot.y + @y_modifier
-      puts "Your robot has moved #{robot.f} by 1 place"
-      puts "Your robot is now at co-ordinates #{robot.x},#{robot.y} and is facing #{robot.f}"
+      puts "Your robot has moved #{robot.f} by 1 place.".green
+      puts "Your robot is now at co-ordinates (#{robot.x},#{robot.y}).".green
     else
-      puts "STOP! Your robot is at the edge of the table! Turn your robot LEFT or RIGHT to continue playing."
-      puts "Your robot is at co-ordinates (#{robot.x},#{robot.y}) and is facing #{robot.f}"
-      puts "Run the TABLE command for more information about your table."
+      puts "STOP! Your robot is at the edge of the table! Turn your robot LEFT or RIGHT to continue playing.".red
+      puts "Your robot is at co-ordinates (#{robot.x},#{robot.y}) and facing #{robot.f}.".green
+      puts "Run the TABLE command for more information about your table.".green
     end
   end
 
