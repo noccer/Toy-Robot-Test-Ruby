@@ -202,7 +202,9 @@ while true
       puts "There is no Table, you need to make one!".red
     end
   when "EXIT"
-  	puts "Thanks for playing TOY ROBOT - by Niall O'Callaghan | github.com/noccer".blue
+    puts "----------------------------------------------------".yellow
+  	puts "Thanks for playing TOY ROBOT - by Niall O'Callaghan | github.com/noccer".yellow.on_blue
+    puts "----------------------------------------------------".yellow
     exit
 	else
     puts "Sorry, that command is not recognised. Please try again.".red
