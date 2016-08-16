@@ -20,14 +20,14 @@ class Table
   def set_grid_logic(table, grid_edit_mode, width_or_height_string)
     while grid_edit_mode == true
       puts "Please enter your new desired table #{width_or_height_string}:"
-      new_table_width_or_height_value = gets.chomp.to_s.to_i
+      new_table_width_or_height_value = ((gets.chomp.to_s.to_i) -1)
       if new_table_width_or_height_value > 0
         update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
         grid_edit_mode = false
       else
         while new_table_width_or_height_value < 1
           puts "Please enter a #{width_or_height_string} value greater than 0:"
-          new_table_width_or_height_value = gets.chomp.to_s.to_i
+          new_table_width_or_height_value = ((gets.chomp.to_s.to_i) -1)
           if new_table_width_or_height_value > 0
             update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
             grid_edit_mode = false
