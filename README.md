@@ -2,8 +2,6 @@
 
 ## by Niall O'Callaghan
 
---------------------------------------------------------------------------------
-
 This is my attempt at the Toy Robot Challenge in Ruby.
 
 If you want to play it online, here's a truncated version (no colours) on Repl.it: [https://repl.it/Cny0/2](https://goo.gl/IaE7BF)
@@ -28,7 +26,11 @@ Requirements to run the app on your machine:
 
 Open your terminal and run:
 
-Alternatively download the code from this page, and extract it
+```
+git clone https://github.com/noccer/Toy-Robot-Test-Ruby.git
+```
+
+Alternatively [download](https://github.com/noccer/Toy-Robot-Test-Ruby/archive/master.zip) the code and extract it on your local machine.
 
 To use the app, you must use the Colorize gem (see **Things to Note** below), but you will be prompted for this at runtime if you do not have it installed.
 
