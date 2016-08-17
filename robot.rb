@@ -15,20 +15,24 @@ class Robot
       robot_co_ord = nil
       begin
         robot_co_ord = gets.chomp
-        robot_co_ord == Integer(robot_co_ord)
-        raise if (robot_co_ord.to_i > table.width)
-        raise if (robot_co_ord.to_i > table.height)
-        raise if (robot_co_ord.to_i < 0)
+        robot_co_ord == Integer(robot_co_ord) # error No1 - they enter non number
+        raise if (robot_co_ord.to_i > table.width && robot_x_or_y == "x") # error No2 - enter number outside of table constraints.
+        raise if (robot_co_ord.to_i > table.height && robot_x_or_y == "y") # error No3 - enter number outside of table constraints.
+        raise if (robot_co_ord.to_i < 0) # error No4 - enter number outside of table constraints.
       rescue
-        if (robot_co_ord.to_i > table.width || robot_co_ord.to_i > table.height || robot_co_ord.to_i < 0)
+        if # error No2 - No4
+          (robot_co_ord.to_i > table.width && robot_x_or_y == "x") ||
+          (robot_co_ord.to_i > table.height && robot_x_or_y == "y") ||
+          (robot_co_ord.to_i < 0)
           puts "The table starts at co-ordinates (0,0) and runs to (#{table.width},#{table.height})".red
           puts "Please enter a valid number within these co-ordinates:".red
-        else
+        else # error No1
           puts "Please enter a valid number only:".red
         end
         retry
       else
         if robot_x_or_y == "x"
+          puts "----------------------------------------------------".yellow
           robot.x = robot_co_ord.to_i
         elsif robot_x_or_y == "y"
           robot.y = robot_co_ord.to_i
