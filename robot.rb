@@ -29,9 +29,9 @@ class Robot
         retry
       else
         if robot_x_or_y == "x"
-          robot.x = robot_co_ord
+          robot.x = robot_co_ord.to_i
         elsif robot_x_or_y == "y"
-          robot.y = robot_co_ord
+          robot.y = robot_co_ord.to_i
         end
       end
     end
