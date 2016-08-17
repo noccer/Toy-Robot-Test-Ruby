@@ -81,15 +81,8 @@ while true
   when "PLACE"
     if @robot
       puts "----------------------------------------------------".yellow
-      puts "Please enter robot x-cordinates (number)"
-      robot_x = gets.chomp.to_i
-      puts "Please enter robot y-cordinates (number)"
-      robot_y = gets.chomp.to_i
-      puts "Please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
-      robot_f = gets.chomp.to_s
-      @robot.place(robot_x, robot_y, robot_f)
-      puts "Your robot is placed at #{robot_x}, #{robot_y}, and it is facing #{robot_f}".green
-      # puts @robot.inspect
+      robot = @robot
+      @robot.place(robot)
     else
       puts "----------------------------------------------------".yellow
       puts "Your robot doesn't exist yet. Please run MAKE first!".red
