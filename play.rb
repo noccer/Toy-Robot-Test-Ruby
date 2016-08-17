@@ -97,10 +97,13 @@ while true
     if @robot.nil?
       @robot = Robot.new
     end
-    @robot.place3n
+    table = @table
+    @robot.place3n(table)
     puts "Your Robot details are as follows:"
     puts "Unique ID No. = #{@robot.__id__}".green
-    puts "Your robot is placed at (#{@robot.x},#{@robot.y}) and is facing #{@robot.f}".green
+    if (@robot.x || @robot.y || @robot.f) != nil
+      puts "Your robot is placed at (#{@robot.x},#{@robot.y}) and is facing #{@robot.f}".green
+    end
   when "MOVE"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       robot = @robot

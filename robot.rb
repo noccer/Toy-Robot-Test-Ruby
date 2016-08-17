@@ -55,10 +55,16 @@ class Robot
     puts "Your robot is placed at (#{robot.x}, #{robot.y}) and is facing #{robot.f}".green
   end
 
-  def place3n
-    @x = 3
-    @y = 3
-    @f = "NORTH"
+  def place3n(table)
+    if table.width < 3 || table.height < 3
+      puts "Oops, this secret command won't work while the table is that small.".red
+      puts "This command will usually place the robot at (3,3) facing NORTH.".red
+      puts "Try making the table at least 4 x 4 wide then run PPP again.".red
+    else
+      @x = 3
+      @y = 3
+      @f = "NORTH"
+    end
   end
 
   def remove_from_table(robot)
