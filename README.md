@@ -41,7 +41,7 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 ## How to Play the Game:
 
 1. To start the app, open your terminal in the toyrobot directory.
-2. run `ruby play.rb`.
+2. run `ruby toyrobot.rb`.
 3. Follow the instructions on screen. All commands are case insensitive.
 4. Hit `CTRL + C` at any time to return to the main menu.
 5. **IMPORTANT:** To exit, simply type `EXIT` from the main menu. To get to the main menu at any time, hit `CTRL + C` as mentioned above.
