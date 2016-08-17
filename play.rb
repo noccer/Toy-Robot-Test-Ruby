@@ -34,7 +34,7 @@ class Play
   	puts "----------------------------------------------------".blue
   	puts "TOY ROBOT - by Niall O'Callaghan | github.com/noccer".yellow
     divider_yellow
-  	puts "Choose an option:".yellow
+  	puts "Choose an option: (case insensitive)".yellow
     puts "MAKE"
     puts "PLACE"
     puts "MOVE"
