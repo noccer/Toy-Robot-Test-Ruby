@@ -92,8 +92,9 @@ while true
       @robot = Robot.new
     end
     @robot.place3n
-    puts @robot.inspect.green
-    puts @robot.__id__.to_s.green
+    puts "Your Robot details are as follows:"
+    puts "Unique ID No. = #{@robot.__id__}".green
+    puts "Your robot is placed at (#{@robot.x},#{@robot.y}) and is facing #{@robot.f}".green
   when "MOVE"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       robot = @robot
@@ -137,7 +138,7 @@ while true
       if ((@robot.x || @robot.y || @robot.f) == nil)
         puts "Your robot isn't on the table yet, please PLACE your Robot on the table first!".green
       else
-        puts "Your robot is placed at (#{@robot.x},#{@robot.y}) and is facing #{@robot.f}"
+        puts "Your robot is placed at (#{@robot.x},#{@robot.y}) and is facing #{@robot.f}".green
       end
     else
       puts "----------------------------------------------------".yellow
