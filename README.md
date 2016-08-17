@@ -4,11 +4,13 @@
 
 This is my attempt at the Toy Robot Challenge in Ruby.
 
-If you want to play it online, here's a truncated version (no colours) on Repl.it: [https://repl.it/Cny0/2](https://goo.gl/IaE7BF)
-
 ## How to play on Repl.it:
 
-1. Visit the link above.
+If you want to play it online, here's a truncated version (no colours) on Repl.it.
+
+1. Visit the link here: <a href='https://goo.gl/IaE7BF' target='_blank'>
+https://repl.it/Cny0/2
+</a>.
 2. Click on the run button at the top of the page.
 3. Start typing commands into the black window on the right hand side.
 4. Sadly, this online version will not work with Colorize gem (see [Things to Note](#things-to-note) below)
