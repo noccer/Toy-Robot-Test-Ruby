@@ -153,7 +153,7 @@ while true
     if @table
       play.divider_yellow
       puts "The table is a #{@table.width + 1} x #{@table.height + 1} grid.".green
-      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]".green
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-EAST corner]".green
     else
       play.divider_yellow
       puts "There is no Table yet!".red
@@ -162,7 +162,7 @@ while true
     if @table
       play.divider_yellow
       puts "The table is currently a #{@table.width + 1} x #{@table.height + 1} grid.".green
-      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-SOUTH]".green
+      puts "It starts at co-ordinates (0,0) [SOUTH-WEST corner] and runs to co-ordinates (#{@table.width},#{@table.height}) [NORTH-EAST corner]".green
       grid_edit_mode_width  = true
       table.set_grid_logic(@table, grid_edit_mode_width, 'width')
       grid_edit_mode_height  = true
