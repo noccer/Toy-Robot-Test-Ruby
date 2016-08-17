@@ -26,7 +26,7 @@ class Table
         grid_edit_mode = false
       else
         while new_table_width_or_height_value < 1
-          puts "Please enter a #{width_or_height_string} value greater than 0:"
+          puts "Please enter a #{width_or_height_string} value greater than 1:"
           new_table_width_or_height_value = ((gets.chomp.to_s.to_i) -1)
           if new_table_width_or_height_value > 0
             update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
