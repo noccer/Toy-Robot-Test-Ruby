@@ -61,6 +61,14 @@ class Robot
     @f = "NORTH"
   end
 
+  def remove_from_table(robot)
+    robot.x = nil
+    robot.y = nil
+    robot.f = nil
+    puts "Your robot is being lifted off the table while it's being resized.".red
+    puts "Make sure to PLACE your robot again before you resume playing.".green
+  end
+
   @x_modifier = 0
   @y_modifier = 0
 
