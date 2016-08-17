@@ -185,7 +185,12 @@ while true
     end
   when "EXIT"
     play.divider_yellow
-  	puts "Thanks for playing TOY ROBOT - by Niall O'Callaghan | github.com/noccer".yellow.on_blue
+    puts "                                                                             "
+    .yellow.on_blue
+  	puts "   Thanks for playing TOY ROBOT - by Niall O'Callaghan | github.com/noccer   "
+    .yellow.on_blue
+  	puts "                                                                             "
+    .yellow.on_blue
     play.divider_yellow
     exit
 	else
