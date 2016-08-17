@@ -71,6 +71,8 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - None!
 - Please contact me if you find a bug or want to just say hello.
 
+  - [au.linkedin.com/in/niall-o-callaghan-webdev](https://au.linkedin.com/in/niall-o-callaghan-webdev)
+  - [@noccer](https://twitter.com/noccer)
   - [noccer.com](http://noccer.com)
 
 --------------------------------------------------------------------------------
