@@ -34,6 +34,20 @@ class Robot
     puts "Please enter robot y-cordinates (number):"
     pre_place_co_ords(robot, "y")
     puts robot.inspect
+    def pre_place_direction(robot)
+      puts "Please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
+      begin
+        robot_f = gets.chomp.to_s.upcase
+        raise if (%w(NORTH SOUTH EAST WEST).include? robot_f) == false
+      rescue
+        puts 'Please enter "NORTH" -or- "SOUTH" -or- "EAST" -or- "WEST" only:'.red
+        retry
+      else
+        robot.f = robot_f
+      end
+    end
+    pre_place_direction(robot)
+    puts "Your robot is placed at #{robot.x}, #{robot.y}, and it is facing #{robot.f}".green
   end
 
   def place3n
