@@ -56,7 +56,7 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 
 ## Things to Note:
 
-- I designed this completely alone, I wanted to make the app in a manner that made the most sense to me.
+- I designed this completely alone, I wanted to make the app in a manner that made the most sense to me. I look forward to reviewing this code in the future when I've more experience under the belt as I'm sure there are many ways I could have cut down on lines of code.
 - I tried to minimise the use of gems, but made one single exception by adding [Colorize](https://github.com/fazibear/colorize). I wanted to give my version of Toy Robot a bit of color, I think it really adds to the User Experience.
 - I went slightly off brief with how the PLACE command is entered. I opted to do this for a better User Experience - No brackets or commas required etc, simply follow prompts.
 
@@ -75,7 +75,7 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - By veering away from the brief, I managed to create a far better User Experience and
 - I learned new ways to deal with Exceptions and how to deal with them.
 - I like the code I wrote to inform the user that they must install a gem to use the program.
-- I also like the code I wrote to prevent the user using CTRL + C exiting the program.
+- I also like the code I wrote to prevent the user using `CTRL + C` to exit the program.
 - As of 17/08/2016 I can't seem to break the program once it's running. Please let me know if you manage to do so!
 
 ## Things I can improve on:
