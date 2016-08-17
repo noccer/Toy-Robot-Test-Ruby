@@ -97,7 +97,7 @@ while true
       @robot.move(robot, @table)
     elsif @robot && (@robot.x == nil)
       puts "----------------------------------------------------".yellow
-      puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
+      puts "Your robot isn't on the table yet, please PLACE your Robot on the table first!".red
     else
       puts "----------------------------------------------------".yellow
       puts "Your robot doesn't exist yet. Please run MAKE first!".red
@@ -110,7 +110,7 @@ while true
       puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}.".green
     elsif @robot && (@robot.x == nil)
       puts "----------------------------------------------------".yellow
-      puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
+      puts "Your robot isn't on the table yet, please PLACE your Robot on the table first!".red
     else
       puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
@@ -122,7 +122,7 @@ while true
       puts "Your robot was facing #{old_direction}, but is now facing #{@robot.f}.".green
     elsif @robot && (@robot.x == nil)
       puts "----------------------------------------------------".yellow
-      puts "Your robot isn't on the table yet, please place your Robot on the table first!".red
+      puts "Your robot isn't on the table yet, please PLACE your Robot on the table first!".red
     else
       puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
@@ -130,7 +130,12 @@ while true
     if @robot
       puts "----------------------------------------------------".yellow
       puts "Your Robot details are as follows:"
-      puts @robot.inspect.green
+      puts "Unique ID No. = #{@robot.__id__}".green
+      if ((@robot.x || @robot.y || @robot.f) == nil)
+        puts "Your robot isn't on the table yet, please PLACE your Robot on the table first!".green
+      else
+        puts "Your robot is placed at (#{@robot.x},#{@robot.y}) and is facing #{@robot.f}"
+      end
     else
       puts "----------------------------------------------------".yellow
       puts "Your robot doesn't exist yet. Please run MAKE first!".red
