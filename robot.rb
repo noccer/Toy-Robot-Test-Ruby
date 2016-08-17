@@ -47,7 +47,7 @@ class Robot
       end
     end
     pre_place_direction(robot)
-    puts "Your robot is placed at #{robot.x}, #{robot.y}, and it is facing #{robot.f}".green
+    puts "Your robot is placed at (#{robot.x}, #{robot.y}) and is facing #{robot.f}".green
   end
 
   def place3n
