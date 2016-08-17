@@ -62,12 +62,12 @@ while true
   when "MAKE"
     unless @robot
       @robot = Robot.new
-      puts "Here is your Robot:"
-      puts @robot.inspect.green
+      puts "We have built your robot!".green
+      puts "Unique ID No. = #{@robot.__id__}".green
     else
       puts "----------------------------------------------------".yellow
-      puts "You already have a robot! here it is:"
-      puts @robot.inspect.green
+      puts "You already have a robot!".red
+      puts "Unique ID No. = #{@robot.__id__}".green
     end
   when "DESTROY"
     if @robot
