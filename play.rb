@@ -57,6 +57,7 @@ play = Play.new
 table = nil
 
 while true
+  begin
   unless @table
     @table = Table.new(4,4)
     table = @table
@@ -186,5 +187,14 @@ while true
     exit
 	else
     puts "Sorry, that command is not recognised. Please try again.".red
-	end
+	end # end of while loop
+
+rescue SignalException => e
+    puts e
+    puts "----------------------------------------------------".red
+    puts "     ERROR: Please type EXIT to quit the game.".red
+    puts "----------------------------------------------------".red
+    retry
+end
+
 end
