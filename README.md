@@ -11,18 +11,18 @@ If you want to play it online, here's a truncated version (no colours) on Repl.i
 1. Visit the link above.
 2. Click on the run button at the top of the page.
 3. Start typing commands into the black window on the right hand side.
-4. Sadly, this online version will not work with Colorize gem (see **Things To Note** below)
+4. Sadly, this online version will not work with Colorize gem (see [Things to Note](#things-to-note) below)
 
 ![repl.it_screenshot.png](img/repl.it_screenshot.png)
 
-## Technical Requrements
+## Technical Requirements
 
 Requirements to run the app on your machine:
 
 - Ruby 2.2.2 or above
 - Bash terminal
 
-## Installation instructions:
+## Installation Instructions:
 
 Open your terminal and run:
 
@@ -32,13 +32,13 @@ git clone https://github.com/noccer/Toy-Robot-Test-Ruby.git
 
 Alternatively [download](https://github.com/noccer/Toy-Robot-Test-Ruby/archive/master.zip) the code and extract it on your local machine.
 
-To use the app, you must use the Colorize gem (see **Things to Note** below), but you will be prompted for this at runtime if you do not have it installed.
+To use the app, you must use the Colorize gem (see [Things to Note](#things-to-note) below), but you will be prompted for this at runtime if you do not have it installed.
 
 ![toyrobot_screenshot_colorize.png](img/toyrobot_screenshot_colorize.png)
 
 --------------------------------------------------------------------------------
 
-## How to play the game:
+## How to Play the Game:
 
 1. To start the app, open your terminal in the toyrobot directory.
 2. run `ruby play.rb`.
@@ -48,9 +48,11 @@ To use the app, you must use the Colorize gem (see **Things to Note** below), bu
 
 > Have fun!
 
-![toyrobot_screenshot.png](img/toyrobot_screenshot.png)
+![toyrobot_screenshot01.png](img/toyrobot_screenshot01.png)
 
-## Things to note:
+![toyrobot_screenshot02.png](img/toyrobot_screenshot02.png)
+
+## Things to Note:
 
 - I designed this completely alone, I wanted to make the app in a manner that made the most sense to me.
 - I tried to minimise the use of gems, but made one single exception by adding [Colorize](https://github.com/fazibear/colorize). I wanted to give my version of Toy Robot a bit of color, I think it really adds to the User Experience.
