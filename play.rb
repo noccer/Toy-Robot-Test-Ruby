@@ -86,7 +86,8 @@ while true
     if @robot
       play.divider_yellow
       robot = @robot
-      @robot.place(robot)
+      table = @table
+      @robot.place(robot, table)
     else
       play.divider_yellow
       puts "Your robot doesn't exist yet. Please run MAKE first!".red

@@ -9,31 +9,36 @@ class Robot
     @f = f
   end
 
-  def place(robot)
-    def pre_place_co_ords(robot, robot_x_or_y)
-      puts "starting pre-place for #{robot_x_or_y}"
+  def place(robot, table)
+    def pre_place_co_ords(robot, table, robot_x_or_y)
+      # puts "starting pre-place for #{robot_x_or_y}"
+      robot_co_ord = nil
       begin
         robot_co_ord = gets.chomp
-        robot_co_ord = Integer(robot_co_ord)
+        robot_co_ord == Integer(robot_co_ord)
+        raise if (robot_co_ord.to_i > table.width)
+        raise if (robot_co_ord.to_i > table.height)
+        raise if (robot_co_ord.to_i < 0)
       rescue
-        puts "Please enter a number only:".red
+        if (robot_co_ord.to_i > table.width || robot_co_ord.to_i > table.height || robot_co_ord.to_i < 0)
+          puts "The table starts at co-ordinates (0,0) and runs to (#{table.width},#{table.height})".red
+          puts "Please enter a valid number within these co-ordinates:".red
+        else
+          puts "Please enter a valid number only:".red
+        end
         retry
       else
         if robot_x_or_y == "x"
-          puts "placing x"
           robot.x = robot_co_ord
         elsif robot_x_or_y == "y"
-          puts "placing y"
           robot.y = robot_co_ord
         end
       end
     end
     puts "Please enter robot x-cordinates (number):"
-    pre_place_co_ords(robot, "x")
-    puts robot.inspect
+    pre_place_co_ords(robot, table, "x")
     puts "Please enter robot y-cordinates (number):"
-    pre_place_co_ords(robot, "y")
-    puts robot.inspect
+    pre_place_co_ords(robot, table, "y")
     def pre_place_direction(robot)
       puts "Please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
       begin
