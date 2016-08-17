@@ -48,6 +48,8 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 
 > Have fun!
 
+## Screenshots
+
 ![toyrobot_screenshot01.png](img/toyrobot_screenshot01.png)
 
 ![toyrobot_screenshot02.png](img/toyrobot_screenshot02.png)
