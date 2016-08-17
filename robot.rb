@@ -9,10 +9,31 @@ class Robot
     @f = f
   end
 
-  def place(x, y, f)
-    @x = x
-    @y = y
-    @f = f
+  def place(robot)
+    def pre_place_co_ords(robot, robot_x_or_y)
+      puts "starting pre-place for #{robot_x_or_y}"
+      begin
+        robot_co_ord = gets.chomp
+        robot_co_ord = Integer(robot_co_ord)
+      rescue
+        puts "Please enter a number only:".red
+        retry
+      else
+        if robot_x_or_y == "x"
+          puts "placing x"
+          robot.x = robot_co_ord
+        elsif robot_x_or_y == "y"
+          puts "placing y"
+          robot.y = robot_co_ord
+        end
+      end
+    end
+    puts "Please enter robot x-cordinates (number):"
+    pre_place_co_ords(robot, "x")
+    puts robot.inspect
+    puts "Please enter robot y-cordinates (number):"
+    pre_place_co_ords(robot, "y")
+    puts robot.inspect
   end
 
   def place3n
