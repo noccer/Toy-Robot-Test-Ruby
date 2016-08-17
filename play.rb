@@ -88,9 +88,12 @@ while true
       puts "Your robot doesn't exist yet. Please run MAKE first!".red
     end
   when "PPP"
-    @robot = Robot.new
+    if @robot.nil?
+      @robot = Robot.new
+    end
     @robot.place3n
     puts @robot.inspect.green
+    puts @robot.__id__.to_s.green
   when "MOVE"
     if @robot && ((@robot.x || @robot.y || @robot.f) != nil)
       robot = @robot
