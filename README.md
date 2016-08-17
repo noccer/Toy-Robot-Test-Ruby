@@ -60,10 +60,30 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - I tried to minimise the use of gems, but made one single exception by adding [Colorize](https://github.com/fazibear/colorize). I wanted to give my version of Toy Robot a bit of color, I think it really adds to the User Experience.
 - I went slightly off brief with how the PLACE command is entered. I opted to do this for a better User Experience - No brackets or commas required etc, simply follow prompts.
 
-## Improvements:
+## Bonus features:
+
+- MAKE - I decided that the robot would have to be 'built' before you could play with it.
+- DESTROY - Users were given the option to destroy their robot if they liked.
+- TABLE - A simple command to inform users about the table size and co-ordinates.
+- GRID - A nice option to allow users to resize the table from its default 5x5 size to any size from 2x2 upwards. When users run this command, the robot is 'lifted' up from the table first, so to continue playing, they must re-place it back on the table.
+- **Easter Egg** - I used this command for shortcutting in testing. It doesn't do anything too exciting... or does it...? I decided to leave it in the final program for fun.
+
+## Aspects I am proud of:
+
+- I didn't Google other solutions to the Toy robot problem. I wanted to do it the hard way by thoroughly understanding the problem.
+- I furthered my knowledge of scope.
+- By veering away from the brief, I managed to create a far better User Experience and
+- I learned new ways to deal with Exceptions and how to deal with them.
+- I like the code I wrote to inform the user that they must install a gem to use the program.
+- I also like the code I wrote to prevent the user using CTRL + C exiting the program.
+- As of 17/08/2016 I can't seem to break the program once it's running. Please let me know if you manage to do so!
+
+## Things I can improve on:
 
 - More commenting (work in progress).
+- Re-work some of the code in the Robot class to not use instance variables.
 - Refactoring of repeated code is needed. **Lots of refactoring**.
+- A `begin` `rescue` solution in the Table.set_grid_logic method would be better.
 - Create a master file for the menu, then move play.rb robot.rb and table.rb classes into a subfolder.
 
 ## Known Bugs and Errors:

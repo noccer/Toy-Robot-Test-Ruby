@@ -59,7 +59,40 @@ class Robot
     puts "Your robot is placed at (#{robot.x}, #{robot.y}) and is facing #{robot.f}".green
   end
 
+  def picture
+    puts '                                                    '.yellow.on_blue
+    puts '                        <|>                         '.yellow.on_blue
+    puts '                       __┴__                        '.yellow.on_blue
+    puts '                      |     |                       '.yellow.on_blue
+    puts '                     [| | | |]                      '.yellow.on_blue
+    puts '                      |  _  |                       '.yellow.on_blue
+    puts '                      |_____|                       '.yellow.on_blue
+    puts '                ____ ___|_|___ ____                 '.yellow.on_blue
+    puts '               ()___)         (___()                '.yellow.on_blue
+    puts '              / / /|   Niall   |\ \ \               '.yellow.on_blue
+    puts '             / / / |           | \ \ \              '.yellow.on_blue
+    puts '             (___) |___________| (___)              '.yellow.on_blue
+    puts '             (___)   (_______)   (___)              '.yellow.on_blue
+    puts '             (___)     (___)     (___)              '.yellow.on_blue
+    puts '             (___)      |_|      (___)              '.yellow.on_blue
+    puts '             (___)  ___/___\___   | |               '.yellow.on_blue
+    puts '              | |  |           |  | |               '.yellow.on_blue
+    puts '              | |  |___________| /___\              '.yellow.on_blue
+    puts '             /___\  | |     | | /   \ \             '.yellow.on_blue
+    puts '            / /   \ | |     | | \   / /             '.yellow.on_blue
+    puts '            \ \   / | |     | |  \ / /              '.yellow.on_blue
+    puts '             \ \ / ()__)   (__()                    '.yellow.on_blue
+    puts '                   / /      \  \                    '.yellow.on_blue
+    puts '                  / /        \  \                   '.yellow.on_blue
+    puts '                _/ /___     __\  \_                 '.yellow.on_blue
+    puts '               |_______|   |_______|                '.yellow.on_blue
+    puts "----------------------------------------------------".green.on_blue
+    puts "       CONGRATS ON FINDING THE EASTER EGG!!!        ".red.on_green
+    puts "----------------------------------------------------".green.on_blue
+  end
+
   def place3n(table)
+    picture
     if table.width < 3 || table.height < 3
       puts "Oops, this secret command won't work while the table is that small.".red
       puts "This command will usually place the robot at (3,3) facing NORTH.".red
