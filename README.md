@@ -88,7 +88,7 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 
 ## Known Bugs and Errors:
 
-- None!
+- There is a slight bug when specifying a grid size. If you type in `23edfgdfgdf` as the width, the value 23 will be captured. I need to add some logic to stop this happening.
 - Please contact me if you find a bug or want to just say hello.
 
   - [au.linkedin.com/in/niall-o-callaghan-webdev](https://au.linkedin.com/in/niall-o-callaghan-webdev)
