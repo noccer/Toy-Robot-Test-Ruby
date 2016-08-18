@@ -76,9 +76,8 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - I furthered my knowledge of scope.
 - By veering away from the brief, I managed to create a far better User Experience.
 - I learned new ways to deal with Exceptions.
-- I like the code I wrote to inform the user that they must install a gem to use the program.
+- I like the code I wrote that informs the user that they must install a gem to use the program.
 - I also like the code I wrote to prevent the user using `CTRL + C` to exit the program.
-- As of 17/08/2016 I can't seem to break the program once it's running. Please let me know if you manage to do so!
 
 ## Things I can improve on:
 
@@ -86,16 +85,19 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - Re-work some of the code in the Robot class to not use instance variables.
 - Refactoring of repeated code is needed. **Lots of refactoring**.
 - A `begin` `rescue` solution in the Table.set_grid_logic method would be better.
-- Create a master file for the menu, then move play.rb robot.rb and table.rb classes into a subfolder.
+- Fix a minor bug with grid resizing, see below.
 
 ## Known Bugs and Errors:
 
-- There is a slight bug when specifying a grid size. If you type in `23edfgdfgdf` as the width, the value 23 will be captured. I need to add some logic to stop this happening.
-- Please contact me if you find a bug or want to just say hello.
+- There is a slight bug when specifying a grid size. If you type in `23edfgdfgdf` as the width, the value 23 will be captured. I will need to add some logic to stop this happening.
+- Please contact me if you find another bug or want to just say hello.
 
+## More About Me / Contact:
+  - [https://noccer.github.io/Niall-O-Callaghan-Portfolio](https://noccer.github.io/Niall-O-Callaghan-Portfolio)
   - [au.linkedin.com/in/niall-o-callaghan-webdev](https://au.linkedin.com/in/niall-o-callaghan-webdev)
   - [@noccer](https://twitter.com/noccer)
-  - [noccer.com](http://noccer.com)
+
+> The End.
 
 --------------------------------------------------------------------------------
 
