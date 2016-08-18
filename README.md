@@ -67,6 +67,7 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - TABLE - A simple command to inform users about the table size and co-ordinates.
 - GRID - A nice option to allow users to resize the table from its default 5x5 size to any size from 2x2 upwards. When users run this command, the robot is 'lifted' up from the table first, so to continue playing, they must re-place it back on the table.
 - `Easter Egg` - I used a secret command (_not 'Easter Egg'_) for shortcutting in testing. It doesn't do anything too exciting... or does it...? I decided to leave it in the final program for fun.
+
 > Hint: Have a look at line 66 of `toyrobot.rb`
 
 ## Aspects I am proud of:
