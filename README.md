@@ -57,8 +57,8 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 ## Things to Note:
 
 - I designed this completely alone, I wanted to make the app in a manner that made the most sense to me. I look forward to reviewing this code in the future when I've more experience under the belt as I'm sure there are many ways I could have cut down on lines of code.
-- I tried to minimise the use of gems, but made one single exception by adding [Colorize](https://github.com/fazibear/colorize). I wanted to give my version of Toy Robot a bit of color, I think it really adds to the User Experience.
-- I went slightly off brief with how the PLACE command is entered. I opted to do this for a better User Experience - No brackets or commas required etc, simply follow prompts.
+- I tried to avoid using any gems, but I made one single exception by adding [Colorize](https://github.com/fazibear/colorize). I wanted to give my version of Toy Robot a bit of color, I think it really adds to the User Experience.
+- I went slightly off brief with how the PLACE command is entered. I opted to do this because it's a better User Experience in my opinion - No brackets or commas required etc, simply follow prompts.
 
 ## Bonus features:
 
@@ -66,7 +66,8 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - DESTROY - Users were given the option to destroy their robot if they liked.
 - TABLE - A simple command to inform users about the table size and co-ordinates.
 - GRID - A nice option to allow users to resize the table from its default 5x5 size to any size from 2x2 upwards. When users run this command, the robot is 'lifted' up from the table first, so to continue playing, they must re-place it back on the table.
-- **Easter Egg** - I used this command for shortcutting in testing. It doesn't do anything too exciting... or does it...? I decided to leave it in the final program for fun.
+- `Easter Egg` - I used a secret command (_not 'Easter Egg'_) for shortcutting in testing. It doesn't do anything too exciting... or does it...? I decided to leave it in the final program for fun.
+> Hint: Have a look at line 66 of `toyrobot.rb`
 
 ## Aspects I am proud of:
 
