@@ -75,7 +75,7 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 - I didn't Google other solutions to the Toy robot problem. I wanted to do it the hard way by thoroughly understanding the problem.
 - I furthered my knowledge of scope.
 - By veering away from the brief, I managed to create a far better User Experience.
-- I learned new ways to deal with Exceptions and how to deal with them.
+- I learned new ways to deal with Exceptions.
 - I like the code I wrote to inform the user that they must install a gem to use the program.
 - I also like the code I wrote to prevent the user using `CTRL + C` to exit the program.
 - As of 17/08/2016 I can't seem to break the program once it's running. Please let me know if you manage to do so!
