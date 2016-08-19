@@ -39,9 +39,9 @@ class Robot
         end
       end
     end
-    puts "Please enter robot x-cordinates (number):"
+    puts "Please enter robot x co-ordinates (number):"
     pre_place_co_ords(robot, table, "x")
-    puts "Please enter robot y-cordinates (number):"
+    puts "Please enter robot y co-ordinates (number):"
     pre_place_co_ords(robot, table, "y")
     def pre_place_direction(robot)
       puts "Please enter robot direction facing ('NORTH' - 'SOUTH' - 'EAST' - 'WEST')"
