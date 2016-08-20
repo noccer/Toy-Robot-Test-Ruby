@@ -141,10 +141,8 @@ while true
           robot = @robot
           @robot.remove_from_table(robot)
         end
-        grid_edit_mode_width  = true
-        table.set_grid_logic(@table, grid_edit_mode_width, 'width')
-        grid_edit_mode_height  = true
-        table.set_grid_logic(@table, grid_edit_mode_height, 'height')
+        table.set_grid_value(@table, 'width')
+        table.set_grid_value(@table, 'height')
         play.divider_yellow
         puts "Your table now looks like this:"
         puts "#{@table.width + 1} x #{@table.height + 1} grid.".green

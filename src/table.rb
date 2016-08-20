@@ -6,10 +6,7 @@ class Table
     @height = height
   end
 
-  @grid_edit_mode_width  = true
-  @grid_edit_mode_height = true
-
-  def update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
+  def apply_grid_value(table, width_or_height_string, new_table_width_or_height_value)
     if width_or_height_string == 'width'
       table.width = new_table_width_or_height_value
     elsif width_or_height_string == 'height'
@@ -17,23 +14,21 @@ class Table
     end
   end
 
-  def set_grid_logic(table, grid_edit_mode, width_or_height_string)
-    while grid_edit_mode == true
-      puts "Please enter your new desired table #{width_or_height_string}:"
-      new_table_width_or_height_value = ((gets.chomp.to_s.to_i) -1)
-      if new_table_width_or_height_value > 0
-        update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
-        grid_edit_mode = false
-      else
-        while new_table_width_or_height_value < 1
-          puts "Please enter a #{width_or_height_string} value greater than 1:".red
-          new_table_width_or_height_value = ((gets.chomp.to_s.to_i) -1)
-          if new_table_width_or_height_value > 0
-            update_grid_value(table, width_or_height_string, new_table_width_or_height_value)
-            grid_edit_mode = false
-          end
-        end
-      end
+  def set_grid_value(table, width_or_height_string)
+    if width_or_height_string == "height"
+      puts "----------------------------------------------------".yellow
+    end
+    puts "Please enter new table #{width_or_height_string} (units):"
+    begin
+      new_table_width_or_height_value = gets.chomp
+      new_table_width_or_height_value == Integer(new_table_width_or_height_value)
+      raise if (new_table_width_or_height_value.to_i < 2)
+    rescue
+        puts "Please enter a numeric value greater than 1:".red
+      retry
+    else
+      new_table_width_or_height_value = new_table_width_or_height_value.to_i
+      apply_grid_value(table, width_or_height_string, (new_table_width_or_height_value - 1))
     end
   end
 
