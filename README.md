@@ -81,16 +81,14 @@ To use the app, you must use the Colorize gem (see [Things to Note](#things-to-n
 
 ## Things I can improve on:
 
-- More commenting (work in progress).
+- More commenting (work in progress, will be completed asap).
 - Re-work some of the code in the Robot class to not use instance variables.
 - Refactoring of repeated code is needed. **Lots of refactoring**.
-- A `begin` `rescue` solution in the Table.set_grid_logic method would be better.
-- Fix a minor bug with grid resizing, see below.
 
 ## Known Bugs and Errors:
 
-- There is a slight bug when specifying a grid size. If you type in `23edfgdfgdf` as the width, the value 23 will be captured. I will need to add some logic to stop this happening.
-- Please contact me if you find another bug or want to just say hello.
+- I can't find any as of 20/08/2016
+- Please contact me if you find a bug or want to just say hello.
 
 ## More About Me / Contact:
   - [https://noccer.github.io/Niall-O-Callaghan-Portfolio](https://noccer.github.io/Niall-O-Callaghan-Portfolio)
