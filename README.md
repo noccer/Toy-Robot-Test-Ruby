@@ -8,7 +8,7 @@ This is my attempt at the Toy Robot Challenge in Ruby.
 
 If you want to play it online, here's a truncated version (no colours) on Repl.it.
 
-1. Visit the link here: [https://repl.it/Cny0/2](https://goo.gl/IaE7BF).
+1. Visit the link here: [https://repl.it/Cny0/3](https://goo.gl/jcNj9G).
 2. Click on the run button at the top of the page.
 3. Start typing commands into the black window on the right hand side.
 4. Sadly, this online version will not work with Colorize gem (see [Things to Note](#things-to-note) below).
